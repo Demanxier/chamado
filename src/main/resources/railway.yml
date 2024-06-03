@@ -1,0 +1,4 @@
+services:
+  main:
+    image: 'railway/java'
+    command: 'mvn exec:java'
