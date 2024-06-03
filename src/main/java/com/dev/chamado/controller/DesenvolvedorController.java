@@ -22,7 +22,7 @@ import com.dev.chamado.model.Desenvolvedor;
 import com.dev.chamado.repository.DesenvolvedorRepository;
 
 @RestController
-@CrossOrigin(origins = "https://demanxier-chamados.up.railway.app/")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1")
 public class DesenvolvedorController {
 
