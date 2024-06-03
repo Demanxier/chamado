@@ -1,6 +1,6 @@
 // Função para buscar os desenvolvedores na API e preencher o campo de seleção
 function buscarDesenvolvedores() {
-    fetch('http://localhost:8082/api/v1/dev')
+    fetch('http://localhost:8080/api/v1/dev')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erro ao buscar desenvolvedores');
@@ -58,7 +58,7 @@ function CadastrarChamado() {
         }
     };
 
-    fetch('http://localhost:8082/api/v1/chamado', {
+    fetch('http://localhost:8080/api/v1/chamado', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

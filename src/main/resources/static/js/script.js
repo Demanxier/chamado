@@ -12,7 +12,7 @@ function cadastrarDev() {
         consultor: consultor
     };
 
-    fetch('http://localhost:8082/api/v1/dev', {
+    fetch('http://localhost:8080/api/v1/dev', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ function cadastrarDev() {
 
 // Função para verificar se o chamado existe
 function verificarChamadoExistente(idChamado) {
-    return fetch(`http://localhost:8082/api/v1/chamado/${idChamado}`)
+    return fetch(`http://localhost:8080/api/v1/chamado/${idChamado}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Chamado não encontrado');
@@ -73,7 +73,7 @@ function CadastrarAtendimento() {
 
             console.log('Dados enviados:', JSON.stringify(dados));
 
-            return fetch('http://localhost:8082/api/v1/atendimento', {
+            return fetch('http://localhost:8080/api/v1/atendimento', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ document.getElementById('filtroPeriodo').addEventListener('submit', function(eve
     var dataInicio = document.getElementById('dataInicio').value;
     var dataFim = document.getElementById('dataFim').value;
 
-    fetch(`http://localhost:8082/api/v1/atendimento?dataInicio=${dataInicio}&dataFim=${dataFim}`)
+    fetch(`http://localhost:8080/api/v1/atendimento?dataInicio=${dataInicio}&dataFim=${dataFim}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao buscar atendimentos');
@@ -140,7 +140,7 @@ document.getElementById('filtroPeriodo').addEventListener('submit', function(eve
 function buscarChamado() {
     var idChamado = document.getElementById('idChamado').value;
     
-    fetch(`http://localhost:8082/api/v1/chamado/${idChamado}`)
+    fetch(`http://localhost:8080/api/v1/chamado/${idChamado}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Chamado não encontrado');
@@ -170,7 +170,7 @@ document.getElementById('atualizarChamado').addEventListener('submit', function(
         status: status
     };
 
-    fetch(`http://localhost:8082/api/v1/chamado/${idChamado}`, {
+    fetch(`http://localhost:8080/api/v1/chamado/${idChamado}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
