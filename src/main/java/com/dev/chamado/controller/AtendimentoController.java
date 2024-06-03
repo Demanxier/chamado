@@ -28,7 +28,7 @@ import com.dev.chamado.model.Atendimento;
 import com.dev.chamado.repository.AtendimentoRepository;
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "https://demanxier-chamados.up.railway.app/")
 @RequestMapping("/api/v1")
 public class AtendimentoController {
 
